@@ -1,2 +1,6 @@
 next-auth;
 mongoose;
+zod;
+mongodb;
+resend;
+@react-email/components;

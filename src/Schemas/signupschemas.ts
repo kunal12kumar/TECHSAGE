@@ -13,16 +13,16 @@ export const usernameValidation= z.string()
 // now for email
 
 export const emailValidation=z.string()
-                              .regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/ ,"Invalid email")
+                              .regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/ ,{message:"Invalid email"})
 
 export const signupschema=z.object({
     username:usernameValidation,
     email:emailValidation,
     password:z.string()
-              .min(6,"password should not less than 6 character"),
+              .min(6,{message:"password should not less than 6 character"}),
     mobileno:z.number()
-            .min(10,"mobile no should of exact 10 letters")
-            .max(10, "mobile no. should of exact 10 letters")
+            .min(10,{message:"mobile no should of exact 10 letters"})
+            .max(10, {message:"mobile no. should of exact 10 letters"})
     
     
 })

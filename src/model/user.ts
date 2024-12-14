@@ -3,6 +3,7 @@
 
 //  defining interface for the user 
 import mongoose, { Schema, Document } from 'mongoose';
+import { boolean } from 'zod';
 export interface User extends Document{
 
     username: string;
@@ -11,6 +12,7 @@ export interface User extends Document{
     verifycode: string;
     expirycode: Date;
     mobileno: number;
+    isVarified: boolean;  //this is to check whether user is otp verified or not 
 
 
 }
@@ -24,7 +26,8 @@ const userschema: Schema<User> =new Schema({
     password:{ type:String, required: true , trim:true },
     mobileno:{type:Number , required:true ,trim:true, unique:true},
     verifycode:{ type:String , required:true , trim:true},
-    expirycode:{type:Date }
+    expirycode:{type:Date },
+    isVarified:{type:Boolean ,required:true}
 
 });
 
