@@ -4,3 +4,4 @@ zod;
 mongodb;
 resend;
 @react-email/components;
+bcrypt;

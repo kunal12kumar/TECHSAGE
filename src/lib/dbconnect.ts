@@ -16,7 +16,7 @@ const connection: ConnectionObject = {};
 
 // now checking for whether url connnection established or not 
 
-async function dbconnect(): Promise<void>{
+export async function dbconnect(): Promise<void>{
 
     if (connection.isConnected){
         console.log("Mongodb already connected")
